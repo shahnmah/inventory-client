@@ -1,0 +1,9 @@
+.banner{
+    background-image: url("https://i.ibb.co/Bg0p1KJ/banner-img.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, .4);
+    background-blend-mode: overlay;
+    height: 500px;
+}
