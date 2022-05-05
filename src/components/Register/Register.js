@@ -4,29 +4,30 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
-
 const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [displayError, setDisplayError] = useState('')
+
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
-      const navigate= useNavigate()
-    const handleUserRegister = (e) =>{
-        e.preventDefault();
-        createUserWithEmailAndPassword(email, password)
-    }
-    if(user){
-        navigate('/login')
-    }
-    if(error){
-        setDisplayError(error.message)
-    }
+      const navigate = useNavigate()
+      const handleUserRegister = e =>{
+          e.preventDefault();
+          createUserWithEmailAndPassword(email, password)
+      }
+      if(user){
+          navigate('/login')
+      }
+      if(error){
+         const  errorMessage = error.message;
+          setDisplayError(errorMessage)
+      }
     return (
         <div>
             <div className='container user-login my-5'>

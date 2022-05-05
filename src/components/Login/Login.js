@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 import './Login.css'
 
 const Login = () => {
@@ -14,9 +15,20 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
+      const navigate = useNavigate()
+      const handleUserLogin = (e) =>{
+        e.preventDefault()
+        signInWithEmailAndPassword(email, password)
+      }
+      if(user){
+          navigate('/home')
+      }
+      if(error){
+          setDisplayError(error.message)
+      }
     return (
         <div className='container user-login my-5'>
-            <Form className='w-25 mx-auto text-center'>
+            <Form className='w-25 mx-auto text-center' onSubmit={handleUserLogin}>
                 <img className='my-3' src="https://i.ibb.co/mhLPrwR/logo-bus-removebg-preview.png" alt="" />
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Control  onBlur={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" required />
@@ -29,6 +41,7 @@ const Login = () => {
                 <Button className='w-100' variant="primary" type="submit">
                     Login
                 </Button>
+                <p>{displayError}</p>
                 <Button className='w-100 my-3' variant="primary" type="submit">
                     Google Login
                 </Button>
