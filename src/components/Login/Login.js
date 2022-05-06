@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
 import { ToastContainer, toast } from 'react-toastify';
@@ -10,22 +10,21 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [
-        signInWithEmailAndPassword,
-        user,
-        loading,
-        error,
-    ] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
     const navigate = useNavigate()
+    let location = useLocation();
+
+    let from = location.state?.from?.pathname || "/";
     let errorElement;
     const handleUserLogin = (e) => {
         e.preventDefault()
         signInWithEmailAndPassword(email, password)
     }
     if (user || googleUser) {
-        navigate('/home')
+        navigate(from, { replace: true });
+
     }
     if (error || googleError) {
         errorElement = <div>
