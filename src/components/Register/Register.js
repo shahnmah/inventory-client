@@ -8,8 +8,6 @@ const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [displayError, setDisplayError] = useState('')
-
     const [
         createUserWithEmailAndPassword,
         user,
@@ -17,6 +15,7 @@ const Register = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
       const navigate = useNavigate()
+      let errorElement;
       const handleUserRegister = e =>{
           e.preventDefault();
           createUserWithEmailAndPassword(email, password)
@@ -24,10 +23,11 @@ const Register = () => {
       if(user){
           navigate('/login')
       }
-      if(error){
-         const  errorMessage = error.message;
-          setDisplayError(errorMessage)
-      }
+      if (error) {
+        errorElement = <div>
+            <p className='text-danger'>Error: {error?.message}</p>
+        </div>
+    }
     return (
         <div>
             <div className='container user-login my-5'>
@@ -43,7 +43,7 @@ const Register = () => {
                     <Form.Group className="mb-3 text-start" controlId="formBasicPassword">
                         <Form.Control  onBlur={(e) => setPassword(e.target.value)} type="password" placeholder="Password" required />
                     </Form.Group>
-                    <p>{displayError}</p>
+                    {errorElement}
                     <Button className='w-100' variant="primary" type="submit">
                         Register
                     </Button>
