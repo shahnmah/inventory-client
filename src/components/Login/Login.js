@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
@@ -16,6 +16,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
     const navigate = useNavigate()
     let errorElement;
@@ -23,15 +24,15 @@ const Login = () => {
         e.preventDefault()
         signInWithEmailAndPassword(email, password)
     }
-    if (user) {
+    if (user || googleUser) {
         navigate('/home')
     }
-    if (error) {
+    if (error || googleError) {
         errorElement = <div>
-            <p className='text-danger'>Error: {error?.message}</p>
+            <p className='text-danger'>Error: {error?.message} {googleError?.message}</p>
         </div>
     }
-    const handleForgotPassword = async() => {
+    const handleForgotPassword = async () => {
         if (email) {
             await sendPasswordResetEmail(email);
             toast('Sent email');
@@ -56,7 +57,7 @@ const Login = () => {
                     Login
                 </Button>
                 {errorElement}
-                <Button className='w-100 my-3' variant="primary" type="submit">
+                <Button onClick={() => signInWithGoogle()} className='w-100 my-3' variant="primary" type="submit">
                     Google Login
                 </Button>
                 <Link className='text-decoration-none' to='/register'>Don't have an account ?</Link>

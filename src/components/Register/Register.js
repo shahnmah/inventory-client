@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const Register = () => {
@@ -13,19 +13,23 @@ const Register = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
-      const navigate = useNavigate()
-      let errorElement;
-      const handleUserRegister = e =>{
-          e.preventDefault();
-          createUserWithEmailAndPassword(email, password)
-      }
-      if(user){
-          navigate('/login')
-      }
-      if (error) {
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    const navigate = useNavigate()
+    let errorElement;
+    const handleUserRegister = e => {
+        e.preventDefault();
+        createUserWithEmailAndPassword(email, password)
+    }
+    if (user) {
+        navigate('/login')
+    }
+    if (googleUser) {
+        navigate('/home')
+    }
+    if (error || googleError) {
         errorElement = <div>
-            <p className='text-danger'>Error: {error?.message}</p>
+            <p className='text-danger'>Error: {error?.message} {googleError?.message}</p>
         </div>
     }
     return (
@@ -37,18 +41,18 @@ const Register = () => {
                         <Form.Control onBlur={(e) => setName(e.target.value)} type="text" placeholder="Enter Name" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control  onBlur={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" required />
+                        <Form.Control onBlur={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" required />
                     </Form.Group>
 
                     <Form.Group className="mb-3 text-start" controlId="formBasicPassword">
-                        <Form.Control  onBlur={(e) => setPassword(e.target.value)} type="password" placeholder="Password" required />
+                        <Form.Control onBlur={(e) => setPassword(e.target.value)} type="password" placeholder="Password" required />
                     </Form.Group>
                     {errorElement}
                     <Button className='w-100' variant="primary" type="submit">
                         Register
                     </Button>
-                    <Button className='w-100 my-3' variant="primary" type="submit">
-                        Google Login
+                    <Button onClick={() => signInWithGoogle()} className='w-100 my-3' variant="primary" type="submit">
+                        Google Sign Up
                     </Button>
                     <Link className='text-decoration-none' to='/login'>Don't have an account ?</Link>
                 </Form>
