@@ -1,0 +1,82 @@
+[
+    {
+        "model": "Scania Multi Axle",
+        "img": "https://i.ibb.co/4KmjrFr/largest-coach-bus-manufacturers-scania.jpg",
+        "dis": "Constructed to ensure that components are protected in the event of a collision.Excellent visibility, an overall well-balanced vehicle",
+        "price": 100000,
+        "quantity": 10,
+        "suppler": "Scania AB"
+    },
+    {
+        "model": "Volvo 9700",
+        "img": "https://i.ibb.co/KqPX2Fk/largest-coach-bus-manufacturers-volvo.jpg",
+        "dis": "Volvo I-Shift, automated gear changing system with integrated retarder. Gearbox oil heater.Collision Warning with Emergency Brake.",
+        "price": 90000,
+        "quantity": 10,
+        "suppler": "Volvo Group"
+    },
+    {
+        "model": "KLQ6127A",
+        "img": "https://i.ibb.co/Lpjg90j/largest-coach-bus-manufacturers-higer.jpg",
+        "dis": "Higer KLQ6127A is a luxurious coach that is suitable for long trips, fixed tour routes and other special purposes.",
+        "price": 70000,
+        "quantity": 10,
+        "suppler": "Higer Bus Company Limited"
+    },
+    {
+        "model": "Tourismo M/2",
+        "img": ":https://i.ibb.co/PQSQ74G/largest-coach-bus-manufacturers.jpg",
+        "dis": "Iconic Mercedes-Benz exterior and interior design make the new Tourrider an eye-catching highlight. The ultimate in functionality.",
+        "price": 100000,
+        "quantity": 10,
+        "suppler": "Mercedes-Benz"
+    },
+    {
+        "model": "Lion's Coach C",
+        "img": "https://i.ibb.co/yqVTsYM/largest-coach-bus-manufacturers-man.jpg",
+        "dis": "Drive in safety, travel in comfort: that says it all about the Lions Coach.Electronic adaptation of braking force to any given braking situation",
+        "price": 90000,
+        "quantity": 10,
+        "suppler": "MAN SE"
+    },
+    {
+        "model": "6127H Coach",
+        "img": "https://i.ibb.co/3pQzdmr/largest-coach-bus-manufacturers-zhongtong.jpg",
+        "dis": " It features excellent cooling system, strong power, and low fuel consumption. The electric retarder works to enhance braking capacity.",
+        "price": 60000,
+        "quantity": 10,
+        "suppler": "Zhongtong bus holding limited"
+    },
+    {
+        "model": "XML6103 Phoenix",
+        "img": "https://i.ibb.co/GnPy07D/largest-coach-bus-manufacturers-golden-dragon.jpg",
+        "dis": "Safety and driver assistance systems are with you every step of the way. Our coaches are equipped with the full range of smart electronic systems",
+        "price": 50000,
+        "quantity": 10,
+        "suppler": "Xiamen Golden Dragon Bus Co"
+    },
+    {
+        "model": "Paradiso 1350",
+        "img": "https://i.ibb.co/Bw0H600/largest-coach-bus-manufacturers-marcopolo.jpg",
+        "dis": "The new generation Paradiso 1350 has been designed to provide the best passenger experience and greater comfort and safety to the driver",
+        "price": 70000,
+        "quantity": 10,
+        "suppler": "Marcopolo S.A"
+    },
+    {
+        "model": "Daimler",
+        "img": "https://i.ibb.co/ZgvJKzp/largest-coach-bus-manufacturers-daimler.jpg",
+        "dis": "Every coach in the Daimler series is equipped with a low-friction hypoid drive axle as standard.Comfort on the road and is gentle on the environment.",
+        "price": 70000,
+        "quantity": 10,
+        "suppler": "Mercedes-Benz"
+    },
+    {
+        "model": "Yutong ZK6907H",
+        "img": "https://i.ibb.co/rwxbt2r/largest-coach-bus-manufacturers-yutong.jpg",
+        "dis": "Unique high-tech features are expressed throughout its appearance. Integrated with the latest fashion trend and breaking traditional boundary.",
+        "price": 60000,
+        "quantity": 10,
+        "suppler": "Zhengzhou Yutong Bus Co Ltd"
+    }
+]

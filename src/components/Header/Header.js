@@ -18,14 +18,15 @@ const Header = () => {
                     <Nav className="ms-auto menu">
                         <Link to='/home'>Home</Link>
                         {
-                            user ? <Link to='/'>Manage Items</Link> : <></>
+                            user ? <Link to='/manageItems'>Manage Items</Link> : <></>
                         }
                         {
-                            user ? <Link to='/'>Add Items</Link> : <></>
+                            user ? <Link to='/addItems'>Add Items</Link> : <></>
                         }
                         {
-                            user ? <Link to='/'>My Items</Link> : <></>
+                            user ? <Link to='/myItems'>My Items</Link> : <></>
                         }
+                        <Link to="/updateItem">Update</Link>
                         <Link to='/blog'>Blog</Link>
                         {
                             user ? <Link onClick={() => signOut(auth)} to='/login'>Log Out</Link> : <Link to='/login'>Login</Link>
