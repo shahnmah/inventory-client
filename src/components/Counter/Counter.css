@@ -1,0 +1,9 @@
+.counter{
+    background-image: url("https://i.ibb.co/vLFMQ72/photo-1486673748761-a8d18475c757-ixlib-rb-1-2.jpg");
+    /* background-position: bottom; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, .8);
+    background-blend-mode: overlay;
+}

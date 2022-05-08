@@ -38,6 +38,9 @@ const Login = () => {
         }
         else {
             toast('Enter Your Email First')
+            const emailInput = document.getElementById('email-input')
+            const value = emailInput.value;
+            emailInput.style.outline = "1px solid red";
         }
     }
     return (
@@ -45,7 +48,7 @@ const Login = () => {
             <Form className='w-25 mx-auto text-center' onSubmit={handleUserLogin}>
                 <img className='my-3' src="https://i.ibb.co/mhLPrwR/logo-bus-removebg-preview.png" alt="" />
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control onBlur={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" required />
+                    <Form.Control id='email-input' onBlur={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3 text-start" controlId="formBasicPassword">

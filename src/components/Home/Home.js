@@ -2,6 +2,7 @@ import React from 'react';
 import useBuses from '../../hooks/useBuses';
 import Banner from '../Banner/Banner';
 import Buses from '../Buses/Buses';
+import Counter from '../Counter/Counter';
 
 const Home = () => {
     const [buses] = useBuses()
@@ -19,7 +20,7 @@ const Home = () => {
                     }
                 </div>
             </div>
-
+            <Counter></Counter>
         </div>
     );
 };

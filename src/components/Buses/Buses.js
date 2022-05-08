@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Buses = ({ bus }) => {
     const { model, img, dis, price, quantity, suppler } = bus;
@@ -12,8 +13,8 @@ const Buses = ({ bus }) => {
                     <p>{dis}</p>
                     <h6>Price: {price} $</h6>
                     <h6>Quantity: {quantity}</h6>
-                    <h6>Suppler name: {suppler}</h6>
-                    <button className='btn btn-primary px-4 my-2'>Update</button>
+                    <h6>Suppler Name: {suppler}</h6>
+                    <Link to='/updateItem' role="button" className='btn btn-primary px-4 my-2'>Update</Link>
                 </div>
             </div>
         </div>
