@@ -1,6 +1,7 @@
 import React from 'react';
 import useBuses from '../../hooks/useBuses';
 import Banner from '../Banner/Banner';
+import Brands from '../Brands/Brands';
 import Buses from '../Buses/Buses';
 import Counter from '../Counter/Counter';
 
@@ -20,6 +21,7 @@ const Home = () => {
                     }
                 </div>
             </div>
+            <Brands></Brands>
             <Counter></Counter>
         </div>
     );
