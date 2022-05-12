@@ -3,6 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const Register = () => {
     const [name, setName] = useState('');
@@ -31,6 +32,9 @@ const Register = () => {
         errorElement = <div>
             <p className='text-danger'>Error: {error?.message} {googleError?.message}</p>
         </div>
+    }
+    if(loading || googleLoading){
+        return <LoadingSpinner></LoadingSpinner>
     }
     return (
         <div>

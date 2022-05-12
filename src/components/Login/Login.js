@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 import './Login.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -30,6 +31,9 @@ const Login = () => {
         errorElement = <div>
             <p className='text-danger'>Error: {error?.message} {googleError?.message}</p>
         </div>
+    }
+    if(loading || googleLoading){
+        return <LoadingSpinner></LoadingSpinner>
     }
     const handleForgotPassword = async () => {
         if (email) {

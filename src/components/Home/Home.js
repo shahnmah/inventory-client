@@ -7,7 +7,6 @@ import Counter from '../Counter/Counter';
 
 const Home = () => {
     const [buses] = useBuses()
-    console.log(buses)
     return (
         <div>
             <Banner></Banner>
@@ -17,7 +16,7 @@ const Home = () => {
                 <h2 className='text-center'>Buses</h2>
                 <div className="row">
                     {
-                        buses.slice(0, 6).map(bus => <Buses key={bus._id} bus={bus}></Buses>)
+                        buses.map(bus => <Buses key={bus._id} bus={bus}></Buses>)
                     }
                 </div>
             </div>
