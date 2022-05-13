@@ -39,8 +39,8 @@ const Register = () => {
     return (
         <div>
             <div className='container user-login my-5'>
-                <Form className='w-25 mx-auto text-center' onSubmit={handleUserRegister}>
-                    <img className='my-3' src="https://i.ibb.co/mhLPrwR/logo-bus-removebg-preview.png" alt="" />
+                <Form className='w-50 mx-auto text-center' onSubmit={handleUserRegister}>
+                    <img className='my-3 log-img' src="https://i.ibb.co/mhLPrwR/logo-bus-removebg-preview.png" alt="" />
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Control onBlur={(e) => setName(e.target.value)} type="text" placeholder="Enter Name" />
                     </Form.Group>

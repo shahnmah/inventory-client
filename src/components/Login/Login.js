@@ -49,8 +49,8 @@ const Login = () => {
     }
     return (
         <div className='container user-login my-5'>
-            <Form className='w-25 mx-auto text-center' onSubmit={handleUserLogin}>
-                <img className='my-3' src="https://i.ibb.co/mhLPrwR/logo-bus-removebg-preview.png" alt="" />
+            <Form className='w-50 mx-auto text-center' onSubmit={handleUserLogin}>
+                <img className='my-3 log-img' src="https://i.ibb.co/mhLPrwR/logo-bus-removebg-preview.png" alt="" />
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control id='email-input' onBlur={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" required />
                 </Form.Group>

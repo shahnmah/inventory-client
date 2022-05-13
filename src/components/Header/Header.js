@@ -15,7 +15,7 @@ const Header = () => {
                     <Navbar.Brand href="#home">
                         <Link to='/home'><img src="https://i.ibb.co/mhLPrwR/logo-bus-removebg-preview.png" alt="" /></Link>
                     </Navbar.Brand>
-                    <Nav className="ms-auto menu">
+                    <Nav className=" menu">
                         <Link to='/home'>Home</Link>
                         {
                             user ? <Link to='/manageItems'>Manage Items</Link> : <></>

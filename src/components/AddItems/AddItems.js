@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddItems = () => {
     const [bus, setBus] = useState([])
@@ -30,10 +32,10 @@ const AddItems = () => {
                   body: JSON.stringify({model, dis, img, price, quantity, suppler})
             })
            .then(res => res.json())
-          alert('Item Added Successfully')
+          toast.success("Item Added Successfully")
         }
         else{
-            alert('Please insert data in all input field')
+            toast.error("Please Full Fill All Field")
         }
         e.target.reset();
     }
@@ -66,6 +68,7 @@ const AddItems = () => {
                         </Button>
                     </Form>
                 </div>
+                <ToastContainer></ToastContainer>
             </div>
         </div>
     );

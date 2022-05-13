@@ -7,12 +7,13 @@ import Buses from '../Buses/Buses';
 import Counter from '../Counter/Counter';
 
 const Home = () => {
-    const [buses, setBuses] = useState([])
-    useEffect( ()=>{
-        fetch('http://localhost:5000/allbuses')
-        .then(res => res.json())
-        .then(data => setBuses(data))
-    },[])
+    // const [buses, setBuses] = useState([])
+    const [buses, setBuses] = useBuses()
+    // useEffect( ()=>{
+    //     fetch('http://localhost:5000/allbuses')
+    //     .then(res => res.json())
+    //     .then(data => setBuses(data))
+    // },[])
     return (
         <div>
             <Banner></Banner>

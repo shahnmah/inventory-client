@@ -10,12 +10,19 @@
 }
 
 
-@media only screen and (max-width: 650px){
+@media only screen and (max-width: 770px){
 .menubar{
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 .menu {
     margin-left: none;
+}
+.navbar-expand .navbar-nav{
+    flex-direction: column;
+}
+.ms-auto{
+    margin-left: 0;
 }
 }

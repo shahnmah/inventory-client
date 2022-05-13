@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const ManageItem = ({ buses }) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -15,10 +16,10 @@ const ManageItem = ({ buses }) => {
            console.log(data);
            window.location.reload();
        })
+       toast.success("Item Deleted Successfully")
        handleClose()
     }
     return (
-
         <div className='col-lg-4 col-md-4 col-sm-6 col-12 p-4 gy-4'>
             <div className='border rounded '>
                 <img className='img-fluid' src={img} alt="" />
@@ -44,7 +45,7 @@ const ManageItem = ({ buses }) => {
                         </Modal.Footer>
                     </Modal>
                 </div>
-
+                <ToastContainer></ToastContainer>
             </div>
         </div>
 
