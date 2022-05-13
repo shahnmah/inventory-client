@@ -7,7 +7,6 @@ const Buses = ({ bus }) => {
     const navigate = useNavigate()
     const navigateToUpdate = id =>{
         navigate(`/updateItem/${id}`)
-        
     }
     return (
 
