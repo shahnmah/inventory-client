@@ -13,7 +13,7 @@ const Header = () => {
             <Navbar bg="light" variant="light">
                 <Container>
                     <Navbar.Brand href="#home">
-                        <img src="https://i.ibb.co/mhLPrwR/logo-bus-removebg-preview.png" alt="" />
+                        <Link to='/home'><img src="https://i.ibb.co/mhLPrwR/logo-bus-removebg-preview.png" alt="" /></Link>
                     </Navbar.Brand>
                     <Nav className="ms-auto menu">
                         <Link to='/home'>Home</Link>
@@ -27,7 +27,7 @@ const Header = () => {
                             user ? <Link to='/myItems'>My Items</Link> : <></>
                         }
                         <Link to="/updateItem">Update</Link>
-                        <Link to='/blog'>Blog</Link>
+                        <Link to='/blogs'>Blogs</Link>
                         {
                             user ? <Link onClick={() => signOut(auth)} to='/login'>Log Out</Link> : <Link to='/login'>Login</Link>
                         }
