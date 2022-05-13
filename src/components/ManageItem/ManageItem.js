@@ -5,7 +5,18 @@ const ManageItem = ({ buses }) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const { model, img, dis, price, quantity, suppler } = buses;
+    const { model, img, dis, price, quantity, suppler, _id } = buses;
+    const handleDelete = id =>{
+       fetch(`http://localhost:5000/allbuses/${id}`, {
+           method: 'DELETE'
+       })
+       .then(res => res.json())
+       .then(data => {
+           console.log(data);
+           window.location.reload();
+       })
+       handleClose()
+    }
     return (
 
         <div className='col-lg-4 col-md-4 col-sm-6 col-12 p-4 gy-4'>
@@ -27,7 +38,7 @@ const ManageItem = ({ buses }) => {
                             <Button variant="secondary" onClick={handleClose}>
                                 Close
                             </Button>
-                            <Button variant="danger" onClick={handleClose}>
+                            <Button variant="danger" onClick={(e)=>handleDelete(_id)}>
                                 Delete
                             </Button>
                         </Modal.Footer>

@@ -9,7 +9,7 @@ import Counter from '../Counter/Counter';
 const Home = () => {
     const [buses, setBuses] = useState([])
     useEffect( ()=>{
-        fetch('http://localhost:5000/buses')
+        fetch('http://localhost:5000/allbuses')
         .then(res => res.json())
         .then(data => setBuses(data))
     },[])
@@ -22,7 +22,7 @@ const Home = () => {
                 <h2 className='text-center'>Buses</h2>
                 <div className="row">
                     {
-                        buses.map(bus => <Buses key={bus._id} bus={bus}></Buses>)
+                        buses.slice(0, 6).map(bus => <Buses key={bus._id} bus={bus}></Buses>)
                     }
                 </div>
                 <div className='d-flex justify-content-center'>

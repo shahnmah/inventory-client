@@ -10,6 +10,7 @@ const AddItems = () => {
     const [quantity, setQuantity] = useState(0)
     const [suppler, setSuppler] = useState('')
 
+
     useEffect( ()=>{
         fetch('http://localhost:5000/allbuses')
         .then(res => res.json())
@@ -29,7 +30,7 @@ const AddItems = () => {
                   body: JSON.stringify({model, dis, img, price, quantity, suppler})
             })
            .then(res => res.json())
-           .then(data => console.log(data))
+          alert('Item Added Successfully')
         }
         else{
             alert('Please insert data in all input field')
