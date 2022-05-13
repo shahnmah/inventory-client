@@ -1,7 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Button, Modal } from 'react-bootstrap';
 
-const ManageItem = ({buses}) => {
+const ManageItem = ({ buses }) => {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     const { model, img, dis, price, quantity, suppler } = buses;
     return (
 
@@ -14,8 +17,23 @@ const ManageItem = ({buses}) => {
                     <h6>Price: {price} $</h6>
                     <h6>Quantity: {quantity}</h6>
                     <h6>Suppler Name: {suppler}</h6>
-                    <button className='btn btn-primary px-4 my-2'>Delete</button>
+                    <button onClick={handleShow} className='btn btn-primary px-4 my-2'>Delete</button>
+
+                    <Modal show={show} onHide={handleClose} animation={false}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Are you sure you want to delete this item?</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={handleClose}>
+                                Close
+                            </Button>
+                            <Button variant="danger" onClick={handleClose}>
+                                Delete
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
                 </div>
+
             </div>
         </div>
 
