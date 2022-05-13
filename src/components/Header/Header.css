@@ -8,3 +8,14 @@
 .menu a:hover{
     color: #0B5ED7;
 }
+
+
+@media only screen and (max-width: 650px){
+.menubar{
+    display: flex;
+    flex-direction: column;
+}
+.menu {
+    margin-left: none;
+}
+}

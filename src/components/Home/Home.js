@@ -9,7 +9,7 @@ import Counter from '../Counter/Counter';
 const Home = () => {
     const [buses, setBuses] = useState([])
     useEffect( ()=>{
-        fetch('http://localhost:5000/bus')
+        fetch('http://localhost:5000/buses')
         .then(res => res.json())
         .then(data => setBuses(data))
     },[])

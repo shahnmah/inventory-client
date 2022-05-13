@@ -1,9 +1,10 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import './Blogs.css';
 
 const Blogs = () => {
     return (
-        <div className='container my-4'>
+        <div className='container my-4 blogs'>
             <h2 className='text-center mb-3'>Welcome to Blogs</h2>
             <div className="row">
                 <div className="col-lg-4 col-md-6 col-sm-12 col-12">

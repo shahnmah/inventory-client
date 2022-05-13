@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <div>
             <Navbar bg="light" variant="light">
-                <Container>
+                <Container className='menubar'>
                     <Navbar.Brand href="#home">
                         <Link to='/home'><img src="https://i.ibb.co/mhLPrwR/logo-bus-removebg-preview.png" alt="" /></Link>
                     </Navbar.Brand>
