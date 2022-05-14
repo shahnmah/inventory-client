@@ -9,13 +9,13 @@ const UpdateItem = () => {
     const [currentQuantity,setCurrentQuantity] = useState(0)
     const [reload, setReload] = useState(false)
     useEffect(()=>{
-        fetch(`http://localhost:5000/bus/${itemId}`)
+        fetch(`https://peaceful-tor-07624.herokuapp.com/bus/${itemId}`)
         .then(res => res.json())
         .then(data => setBus(data))
     },[reload])
     const handleUpdateQuantity = () =>{
         const newQuantity = {quantity};
-        fetch(`http://localhost:5000/allbuses/${itemId}`, {
+        fetch(`https://peaceful-tor-07624.herokuapp.com/allbuses/${itemId}`, {
 
             method: 'PUT',
             headers: {

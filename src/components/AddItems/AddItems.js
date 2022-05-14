@@ -13,7 +13,7 @@ const AddItems = () => {
     const [quantity, setQuantity] = useState('')
     const [suppler, setSuppler] = useState('')
     useEffect( ()=>{
-        fetch('http://localhost:5000/allbuses')
+        fetch('https://peaceful-tor-07624.herokuapp.com/allbuses')
         .then(res => res.json())
         .then(data => setBus(data))
     },[])
@@ -29,7 +29,7 @@ const AddItems = () => {
     const handleAddItem = e =>{
         e.preventDefault();
         if(bus && model && dis && img && price && quantity && suppler){
-            fetch('http://localhost:5000/bus',{
+            fetch('https://peaceful-tor-07624.herokuapp.com/bus',{
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json',

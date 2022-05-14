@@ -10,7 +10,7 @@ const Home = () => {
     // const [buses, setBuses] = useState([])
     const [buses, setBuses] = useBuses()
     // useEffect( ()=>{
-    //     fetch('http://localhost:5000/allbuses')
+    //     fetch('https://peaceful-tor-07624.herokuapp.com/allbuses')
     //     .then(res => res.json())
     //     .then(data => setBuses(data))
     // },[])

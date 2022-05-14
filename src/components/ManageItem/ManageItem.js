@@ -8,7 +8,7 @@ const ManageItem = ({ buses }) => {
     const handleShow = () => setShow(true);
     const { model, img, dis, price, quantity, suppler, _id } = buses;
     const handleDelete = id =>{
-       fetch(`http://localhost:5000/allbuses/${id}`, {
+       fetch(`https://peaceful-tor-07624.herokuapp.com/allbuses/${id}`, {
            method: 'DELETE'
        })
        .then(res => res.json())
