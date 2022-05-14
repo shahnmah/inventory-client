@@ -1,0 +1,19 @@
+.add-item-container{
+    width: 50%;
+    margin: 0 auto;
+}
+@media only screen and (max-width: 1400px){
+    .add-item{
+        height: 100vh;
+    }
+}
+@media only screen and (max-width: 900px){
+    .add-item-container{
+        width: 75%;
+    }
+}
+@media only screen and (max-width: 430px){
+    .add-item-container{
+        width: 100%;
+    }
+}

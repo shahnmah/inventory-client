@@ -1,6 +1,5 @@
-import { Button } from 'bootstrap';
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Buses = ({ bus }) => {
     const { model, img, dis, price, quantity, suppler, _id } = bus;

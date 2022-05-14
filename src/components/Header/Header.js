@@ -7,7 +7,7 @@ import auth from '../../firebase.init';
 import './Header.css'
 
 const Header = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     return (
         <div>
             <Navbar bg="light" variant="light">
@@ -26,12 +26,10 @@ const Header = () => {
                         {
                             user ? <Link to='/myItems'>My Items</Link> : <></>
                         }
-                        <Link to="/updateItem">Update</Link>
                         <Link to='/blogs'>Blogs</Link>
                         {
                             user ? <Link onClick={() => signOut(auth)} to='/login'>Log Out</Link> : <Link to='/login'>Login</Link>
                         }
-
                     </Nav>
                 </Container>
             </Navbar>

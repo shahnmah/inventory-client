@@ -6,8 +6,6 @@ const Banner = () => {
             <div className="container h-100 text-center d-flex align-items-center">
                 <div>
                     <h1 className='text-white'>You will find hare all the word class Buses in the Word.Explore the World of Buses</h1>
-                    <img src="https://i.ibb.co/Kr2NVVq/bus-png-40026-1.png" alt="" />
-                    {/* <button className='btn btn-primary'>Manege Buses</button> */}
                 </div>
             </div>
         </div>

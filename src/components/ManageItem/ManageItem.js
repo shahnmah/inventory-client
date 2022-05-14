@@ -18,6 +18,7 @@ const ManageItem = ({ buses }) => {
        })
        toast.success("Item Deleted Successfully")
        handleClose()
+       window.location.reload();
     }
     return (
         <div className='col-lg-4 col-md-4 col-sm-6 col-12 p-4 gy-4'>
@@ -39,7 +40,7 @@ const ManageItem = ({ buses }) => {
                             <Button variant="secondary" onClick={handleClose}>
                                 Close
                             </Button>
-                            <Button variant="danger" onClick={(e)=>handleDelete(_id)}>
+                            <Button variant="danger" onClick={(e) => handleDelete(_id)}>
                                 Delete
                             </Button>
                         </Modal.Footer>
@@ -48,7 +49,6 @@ const ManageItem = ({ buses }) => {
                 <ToastContainer></ToastContainer>
             </div>
         </div>
-
     );
 };
 

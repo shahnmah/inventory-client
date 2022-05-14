@@ -1,0 +1,20 @@
+.update-container{
+    width: 50%;
+}
+.quantity-update-container{
+    display: flex;
+    justify-content: space-between;
+}
+@media only screen and (max-width: 900px){
+    .update-container{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 450px){
+	.quantity-update-container{
+        display: block;
+    }
+    .update-input{
+        margin: 25px 0;
+    }
+}
