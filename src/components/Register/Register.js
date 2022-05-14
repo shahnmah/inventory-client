@@ -58,7 +58,7 @@ const Register = () => {
                     <Button onClick={() => signInWithGoogle()} className='w-100 my-3' variant="primary" type="submit">
                         Google Sign Up
                     </Button>
-                    <Link className='text-decoration-none' to='/login'>Don't have an account ?</Link>
+                    <Link className='text-decoration-none' to='/login'>Already have an account ?</Link>
                 </Form>
             </div>
         </div>
