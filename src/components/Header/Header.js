@@ -26,7 +26,6 @@ const Header = () => {
                         {
                             user ? <Link to='/myItems'>My Items</Link> : <></>
                         }
-                        {/* <Link to='/blogs'>Blogs</Link> */}
                         {
                             user ? <Link onClick={() => signOut(auth)} to='/login'>Log Out</Link> : <Link to='/login'>Login</Link>
                         }

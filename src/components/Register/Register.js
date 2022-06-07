@@ -23,7 +23,7 @@ const Register = () => {
         createUserWithEmailAndPassword(email, password)
     }
     if (user) {
-        navigate('/login')
+        navigate('/home')
     }
     if (googleUser) {
         navigate('/home')
