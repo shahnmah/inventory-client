@@ -16,7 +16,6 @@ const Login = () => {
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
     const navigate = useNavigate()
     let location = useLocation();
-
     let from = location.state?.from?.pathname || "/";
     let errorElement;
     const handleUserLogin = (e) => {
@@ -25,7 +24,6 @@ const Login = () => {
     }
     if (user || googleUser) {
         navigate(from, { replace: true });
-
     }
     if (error || googleError) {
         errorElement = <div>
@@ -42,8 +40,7 @@ const Login = () => {
         }
         else {
             toast('Enter Your Email First')
-            const emailInput = document.getElementById('email-input')
-            const value = emailInput.value;
+            const emailInput = document.getElementById('email-input');
             emailInput.style.outline = "1px solid red";
         }
     }
@@ -72,5 +69,4 @@ const Login = () => {
         </div>
     );
 };
-
 export default Login;

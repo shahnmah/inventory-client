@@ -27,9 +27,6 @@ const UpdateItem = () => {
         .then(data => console.log(data))
         setReload(!reload)
     }
-    const handleDelivered = () =>{
-        console.log(currentQuantity)
-    }
     return (
         <div className='container update-container'>
             <h1 className='text-center mt-4'>Update Your Item</h1>
@@ -44,7 +41,6 @@ const UpdateItem = () => {
                             <h6 onBlur={e=> setCurrentQuantity(e.target.value)}>Quantity: {bus.quantity}</h6>
                             <h6>Suppler Name: {bus.suppler}</h6>
                             <div className='quantity-update-container'>
-                                <button onClick={handleDelivered} style={{height: '40px'}} className='btn btn-primary py-2 px-5'>Delivered</button>
                                 <div className='update-input'>
                                     <input onChange={(e) => setQuantity(e.target.value)} className='mb-2' type="number" placeholder='Update Quantity' name="quantity" id="" /> <br />
                                     <button onClick={handleUpdateQuantity} className='btn btn-primary'>Update Quantity</button>

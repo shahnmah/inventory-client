@@ -8,7 +8,6 @@ const Buses = ({ bus }) => {
         navigate(`/updateItem/${id}`)
     }
     return (
-
         <div className='col-lg-4 col-md-4 col-sm-6 col-12 p-4 gy-4'>
             <div className='border rounded '>
                 <img className='img-fluid' src={img} alt="" />

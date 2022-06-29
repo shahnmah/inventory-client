@@ -24,9 +24,6 @@ const Header = () => {
                             user ? <Link to='/addItems'>Add Items</Link> : <></>
                         }
                         {
-                            user ? <Link to='/myItems'>My Items</Link> : <></>
-                        }
-                        {
                             user ? <Link onClick={() => signOut(auth)} to='/login'>Log Out</Link> : <Link to='/login'>Login</Link>
                         }
                     </Nav>
